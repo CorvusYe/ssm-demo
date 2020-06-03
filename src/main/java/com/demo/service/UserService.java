@@ -1,6 +1,8 @@
 package com.demo.service;
 
-import com.demo.dao.entity.UserEntity;
+import com.demo.entity.UserEntity;
+
+import java.util.List;
 
 /**
  * 用户服务类
@@ -16,4 +18,6 @@ public interface UserService {
     Integer deleteUser(Integer id);
 
     UserEntity getUserById(Integer id);
+
+    List<UserEntity> getUsers();
 }

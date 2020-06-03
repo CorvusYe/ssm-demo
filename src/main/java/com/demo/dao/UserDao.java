@@ -1,6 +1,8 @@
 package com.demo.dao;
 
-import com.demo.dao.entity.UserEntity;
+import com.demo.entity.UserEntity;
+
+import java.util.List;
 
 /**
  * 用户Dao类
@@ -39,4 +41,10 @@ public interface UserDao {
      * @return
      */
     UserEntity selectById(Integer id);
+
+    /**
+     * 这里主要查询多条记录
+     * @return
+     */
+    List<UserEntity> selectAll();
 }

@@ -2,26 +2,37 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-
+<!--
+$ Statement
+# PreparedStatement    {0}
+-->
 <mapper namespace="com.demo.dao.UserDao">
-    <insert id="insert" parameterType="com.demo.dao.entity.UserEntity">
+    <insert id="insert" parameterType="com.demo.entity.UserEntity">
         INSERT INTO
-        user(id,username,password)
+        demo_user(id,username,password)
         VALUES(#{id},#{username},#{password});
     </insert>
-    <update id="update" parameterType="com.demo.dao.entity.UserEntity">
-        UPDATE user
-        SET id=#{id} WHERE id=#{id},username=#{username},password=#{password}
+    <update id="update" parameterType="com.demo.entity.UserEntity">
+        UPDATE demo_user
+        SET
+            id=#{id},username=#{username},password=#{password}
+        WHERE
+            id=#{id}
     </update>
 
-    <select id="selectById" resultType="com.demo.dao.entity.UserEntity" parameterType="java.lang.Integer">
+    <select id="selectById" resultType="com.demo.entity.UserEntity" parameterType="java.lang.Integer">
         SELECT *
-        FROM user
+        FROM demo_user
         WHERE id=#{id};
     </select>
 
+    <select id="selectAll" resultType="com.demo.entity.UserEntity">
+        SELECT *
+        FROM demo_user
+    </select>
+
     <delete id="delete" parameterType="java.lang.Integer">
-        DELETE FROM user
+        DELETE FROM demo_user
         WHERE id=#{id}
     </delete>
 </mapper>

@@ -1,4 +1,4 @@
-package com.demo.dao.entity;
+package com.demo.entity;
 
 /**
  * 用户实体类
@@ -6,15 +6,15 @@ package com.demo.dao.entity;
  * @author Wwwwei
  */
 public class UserEntity {
-    private Integer id; //用户id
+    private String id; //用户id
     private String username;//用户名
     private String password;//用户密码
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
